@@ -8,8 +8,8 @@ Group:		Base/Utilities
 Group(de):	Gründsätzlich/Werkzeuge
 Group(pl):	Podstawowe/Narzêdzia
 Source0:	%{name}-%{version}.tar.gz
-Requires:	initscripts >= 2.81, glibc >= 2.0.5-5
-Prereq:		fileutils, gawk
+Requires:	rc-scripts
+Prereq:		fileutils, awk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -18,6 +18,13 @@ setclock. Timeconfig provides a simple text mode tool for configuring
 the time parameters in /etc/sysconfig/clock and /etc/localtime. The
 setclock tool sets the hardware clock on the system to the current
 time stored in the system clock.
+
+%description -l pl
+Pakiet timeconfig zawiera dwa narzêdzia: timeconfig oraz setclock.
+timeconfig jest prostym tekstowym narzêdziem do konfiguracji
+parametrów czasu systemowego w /etc/sysconfig/clock i /etc/localtime .
+setclock jest narzêdziem do ustawiania zegara sprzêtowego na aktualny
+czas systemowy.
 
 %prep
 %setup -q
