@@ -1,21 +1,21 @@
-Summary: Text mode tools for setting system time parameters.
-Name: timeconfig
-%define version 2.7
-Version: %{version}
-Release: 1
-Copyright: GPL
-Group: System Environment/Base
-Source: timeconfig-%{version}.tar.gz
-Requires: initscripts >= 2.81, glibc >= 2.0.5-5
-Prereq: fileutils, gawk
+Summary:	Text mode tools for setting system time parameters.
+Name:		timeconfig
+Version:	2.7
+Release:	1
+License:	GPL
+Group:		Base/Utilities
+Group(pl):	Podstawowe/Narzêdzia
+Source0:	%{name}-%{version}.tar.gz
+Requires:	initscripts >= 2.81, glibc >= 2.0.5-5
+Prereq:		fileutils, gawk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The timeconfig package contains two utilities:  timeconfig and setclock.
-Timeconfig provides a simple text mode tool for configuring the time
-parameters in /etc/sysconfig/clock and /etc/localtime. The setclock tool
-sets the hardware clock on the system to the current time stored in the
-system clock.
+The timeconfig package contains two utilities: timeconfig and
+setclock. Timeconfig provides a simple text mode tool for configuring
+the time parameters in /etc/sysconfig/clock and /etc/localtime. The
+setclock tool sets the hardware clock on the system to the current
+time stored in the system clock.
 
 %prep
 %setup -q
@@ -26,7 +26,7 @@ system clock.
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} PREFIX=$RPM_BUILD_ROOT install
-rm -f /usr/lib/zoneinfo
+rm -f %{_libdir}/zoneinfo
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -37,9 +37,9 @@ if [ -L /etc/localtime -a ! -e /etc/localtime ]; then
 fi
 
 %files
-%defattr(-,root,root)
-/usr/sbin/timeconfig
-/usr/sbin/setclock
-/usr/man/man8/timeconfig.8
-/usr/man/man8/setclock.8
-/usr/share/locale/*/LC_MESSAGES/timeconfig.mo
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_sbindir}/timeconfig
+%attr(755,root,root) %{_sbindir}/setclock
+%{_mandir}/man8/timeconfig.8
+%{_mandir}/man8/setclock.8
+%{_datadir}/locale/*/LC_MESSAGES/timeconfig.mo
