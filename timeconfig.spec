@@ -5,8 +5,6 @@ Version:	2.7
 Release:	1
 License:	GPL
 Group:		Base/Utilities
-Group(de):	Gründsätzlich/Werkzeuge
-Group(pl):	Podstawowe/Narzêdzia
 Source0:	%{name}-%{version}.tar.gz
 Requires:	rc-scripts
 Prereq:		fileutils, awk
