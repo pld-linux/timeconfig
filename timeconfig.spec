@@ -1,9 +1,11 @@
-Summary:	Text mode tools for setting system time parameters.
+Summary:	Text mode tools for setting system time parameters
+Summary(pl):	Tekstowe narzêdzie do konfigurowania czasu systemowego
 Name:		timeconfig
 Version:	2.7
 Release:	1
 License:	GPL
 Group:		Base/Utilities
+Group(de):	Gründsätzlich/Werkzeuge
 Group(pl):	Podstawowe/Narzêdzia
 Source0:	%{name}-%{version}.tar.gz
 Requires:	initscripts >= 2.81, glibc >= 2.0.5-5
@@ -21,7 +23,7 @@ time stored in the system clock.
 %setup -q
 
 %build
-%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,6 +42,6 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/timeconfig
 %attr(755,root,root) %{_sbindir}/setclock
-%{_mandir}/man8/timeconfig.8
-%{_mandir}/man8/setclock.8
+%{_mandir}/man8/timeconfig.8*
+%{_mandir}/man8/setclock.8*
 %{_datadir}/locale/*/LC_MESSAGES/timeconfig.mo
