@@ -21,11 +21,11 @@ system clock.
 %setup -q
 
 %build
-make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make PREFIX=$RPM_BUILD_ROOT install
+%{__make} PREFIX=$RPM_BUILD_ROOT install
 rm -f /usr/lib/zoneinfo
 
 %clean
