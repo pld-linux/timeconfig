@@ -7,7 +7,7 @@ License:	GPL
 Group:		Base/Utilities
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	d14629320acadaf911feab8807320af1
-BuildRequires:  gettext-devel
+BuildRequires:	gettext-devel
 BuildRequires:	newt-devel
 Requires:	rc-scripts
 Requires:	newt
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 if [ -L /etc/localtime -a ! -e /etc/localtime ]; then
-    ln -sf `ls -ld /etc/localtime | awk '{ print $11}' | sed 's/lib/share/'` /etc/localtime
+	ln -sf `ls -ld /etc/localtime | awk '{ print $11}' | sed 's/lib/share/'` /etc/localtime
 fi
 
 %files
