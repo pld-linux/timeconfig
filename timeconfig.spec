@@ -8,7 +8,7 @@ Group: System Environment/Base
 Source: timeconfig-%{version}.tar.gz
 Requires: initscripts >= 2.81, glibc >= 2.0.5-5
 Prereq: fileutils, gawk
-BuildRoot: /var/tmp/timeconfig-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The timeconfig package contains two utilities:  timeconfig and setclock.
