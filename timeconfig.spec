@@ -7,7 +7,9 @@ License:	GPL
 Group:		Base/Utilities
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	d14629320acadaf911feab8807320af1
+BuildRequires:	newt-devel
 Requires:	rc-scripts
+Requires:	newt
 Prereq:		fileutils, awk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +36,9 @@ czas systemowy.
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} PREFIX=$RPM_BUILD_ROOT install
-rm -f %{_libdir}/zoneinfo
+
+install -d $RPM_BUILD_ROOT%{_mandir}
+mv -f $RPM_BUILD_ROOT%{_prefix}/man/* $RPM_BUILD_ROOT%{_mandir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
