@@ -32,13 +32,16 @@ czas systemowy.
 %setup -q
 
 %build
-%{__make} RPM_OPT_FLAGS="%{rpmcflags}"
+%{__make} \
+	RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} PREFIX=$RPM_BUILD_ROOT install
-
 install -d $RPM_BUILD_ROOT%{_mandir}
+
+%{__make} install \
+	PREFIX=$RPM_BUILD_ROOT
+
 mv -f $RPM_BUILD_ROOT%{_prefix}/man/* $RPM_BUILD_ROOT%{_mandir}
 
 %clean
