@@ -33,6 +33,7 @@ czas systemowy.
 
 %build
 %{__make} \
+	CC="%{__cc}" \
 	RPM_OPT_FLAGS="%{rpmcflags}"
 
 %install
@@ -44,6 +45,8 @@ install -d $RPM_BUILD_ROOT%{_mandir}
 
 mv -f $RPM_BUILD_ROOT%{_prefix}/man/* $RPM_BUILD_ROOT%{_mandir}
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -52,10 +55,10 @@ if [ -L /etc/localtime -a ! -e /etc/localtime ]; then
 	ln -sf `ls -ld /etc/localtime | awk '{ print $11}' | sed 's/lib/share/'` /etc/localtime
 fi
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/timeconfig
 %attr(755,root,root) %{_sbindir}/setclock
+%lang(pt_BR) %{_mandir}/pt_BR/man8/*.8*
 %{_mandir}/man8/timeconfig.8*
 %{_mandir}/man8/setclock.8*
-%{_datadir}/locale/*/LC_MESSAGES/timeconfig.mo
