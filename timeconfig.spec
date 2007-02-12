@@ -1,5 +1,5 @@
 Summary:	Text mode tools for setting system time parameters
-Summary(pl):	Tekstowe narzêdzie do konfigurowania czasu systemowego
+Summary(pl.UTF-8):   Tekstowe narzÄ™dzie do konfigurowania czasu systemowego
 Name:		timeconfig
 Version:	2.7
 Release:	1
@@ -23,11 +23,11 @@ the time parameters in /etc/sysconfig/clock and /etc/localtime. The
 setclock tool sets the hardware clock on the system to the current
 time stored in the system clock.
 
-%description -l pl
-Pakiet timeconfig zawiera dwa narzêdzia: timeconfig oraz setclock.
-timeconfig jest prostym tekstowym narzêdziem do konfiguracji
-parametrów czasu systemowego w /etc/sysconfig/clock i /etc/localtime .
-setclock jest narzêdziem do ustawiania zegara sprzêtowego na aktualny
+%description -l pl.UTF-8
+Pakiet timeconfig zawiera dwa narzÄ™dzia: timeconfig oraz setclock.
+timeconfig jest prostym tekstowym narzÄ™dziem do konfiguracji
+parametrÃ³w czasu systemowego w /etc/sysconfig/clock i /etc/localtime .
+setclock jest narzÄ™dziem do ustawiania zegara sprzÄ™towego na aktualny
 czas systemowy.
 
 %prep
