@@ -1,5 +1,5 @@
 Summary:	Text mode tools for setting system time parameters
-Summary(pl.UTF-8):   Tekstowe narzędzie do konfigurowania czasu systemowego
+Summary(pl.UTF-8):	Tekstowe narzędzie do konfigurowania czasu systemowego
 Name:		timeconfig
 Version:	2.7
 Release:	1
