@@ -8,7 +8,7 @@ Group:		Base/Utilities
 # https://fedorahosted.org/releases/t/i/timeconfig/ (not yet)
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	d14629320acadaf911feab8807320af1
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	newt-devel
 BuildRequires:	popt-devel
 Requires:	rc-scripts
